@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+
+:root {
+  --Very-Dark-Magenta: hsl(300, 43%, 22%);
+  --Soft-Pink: hsl(333, 80%, 67%);
+  --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+  --Light-Grayish-Magenta: hsl(300, 24%, 96%);
+  --White: hsl(0, 0%, 100%);
+  --Font-size: 15px;
+  --ff: "League Spartan", sans-serif;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+  --spacing-600: 4rem;
+  --spacing-400: 2.5rem;
+  --spacing-300: 2rem;
+  --spacing-200: 1.5rem;
+  --spacing-100: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff);
+  background: url(./images/bg-pattern-top-mobile.svg),
+    url(./images/bg-pattern-bottom-mobile.svg) bottom;
+  background-repeat: no-repeat;
+
+  padding: var(--spacing-600) var(--spacing-300);
+}
+
+.social-proof-section {
+  width: clamp(250px, 70rem, 1200px);
+}
+
+.text-ratings-container {
+  text-align: center;
+}
+
+.text,
+.ratings {
+  width: 100%;
+}
+
+.text h1 {
+  color: var(--Very-Dark-Magenta);
+  font-size: 2.9rem;
+  font-weight: var(--fw-700);
+  max-width: 15ch;
+  margin: 0 auto var(--spacing-100);
+  line-height: 0.8;
+}
+
+.text p {
+  color: var(--Dark-Grayish-Magenta);
+  line-height: 1.3;
+  font-weight: var(--fw-500);
+  max-width: 40ch;
+  margin: 0 auto;
+}
+
+.ratings,
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-100);
+}
+
+.ratings {
+  margin: var(--spacing-400) 0;
+}
+
+.rating-card {
+  padding: var(--spacing-200);
+  background-color: var(--Light-Grayish-Magenta);
+  color: var(--Very-Dark-Magenta);
+  font-weight: var(--fw-700);
+}
+
+.review-card,
+.rating-card {
+  border-radius: 10px;
+}
+
+.review-card {
+  background-color: var(--Very-Dark-Magenta);
+  color: var(--White);
+  padding: var(--spacing-300);
+}
+
+.stars img {
+  margin-inline: 2px;
+}
+
+.review-card .person {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-300);
+  margin-bottom: var(--spacing-200);
+}
+
+.review-card .person img {
+  border-radius: 50%;
+  width: 3rem;
+}
+
+.review-card .person p {
+  font-weight: var(--fw-500);
+  line-height: 1.2;
+}
+
+.review-card .person p span {
+  display: block;
+  color: var(--Soft-Pink);
+  font-weight: var(--fw-400);
+}
+
+.person-review {
+  font-weight: var(--fw-500);
+  line-height: 1.7;
+}
+
+@media (min-width: 700px) {
+  body {
+    background: url(./images/bg-pattern-top-desktop.svg),
+      url(./images/bg-pattern-bottom-desktop.svg) bottom;
+    background-repeat: no-repeat;
+  }
+
+  .text-ratings-container {
+    text-align: left;
+    display: flex;
+  }
+
+  .text h1 {
+    margin: 0 0 var(--spacing-200);
+  }
+
+  .text p {
+    margin: 0;
+  }
+
+  .rating-card {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .rating-card:nth-child(2) {
+    align-self: center;
+  }
+
+  .rating-card:nth-child(3) {
+    align-self: flex-end;
+  }
+
+  .reviews {
+    height: 18rem;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .review-card:nth-child(1) {
+    align-self: flex-start;
+  }
+
+  .review-card:nth-child(3) {
+    align-self: flex-end;
+  }
+}
